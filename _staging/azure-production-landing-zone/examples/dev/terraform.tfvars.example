@@ -1,0 +1,63 @@
+subscription_id     = "00000000-0000-0000-0000-000000000000"
+location            = "westeurope"
+resource_group_name = "rg-platform-network-dev"
+
+tags = {
+  environment = "dev"
+  managed_by  = "terraform"
+  owner       = "platform-team"
+}
+
+networks = {
+  hub = {
+    name          = "vnet-platform-hub-dev"
+    address_space = ["10.40.0.0/16"]
+    subnets = {
+      firewall = {
+        name             = "AzureFirewallSubnet"
+        address_prefixes = ["10.40.0.0/26"]
+      }
+      shared_services = {
+        name             = "snet-shared-services"
+        address_prefixes = ["10.40.1.0/24"]
+      }
+    }
+  }
+  workload = {
+    name          = "vnet-workload-dev"
+    address_space = ["10.41.0.0/16"]
+    subnets = {
+      application = {
+        name             = "snet-application"
+        address_prefixes = ["10.41.1.0/24"]
+      }
+    }
+  }
+}
+
+security_groups = {
+  shared_services = {
+    name        = "nsg-shared-services-dev"
+    network_key = "hub"
+    subnet_key  = "shared_services"
+    rules = [
+      {
+        name                       = "Allow-HTTPS-from-VNet"
+        priority                   = 200
+        direction                  = "Inbound"
+        access                     = "Allow"
+        protocol                   = "Tcp"
+        destination_port_range     = "443"
+        source_address_prefix      = "VirtualNetwork"
+        destination_address_prefix = "*"
+        description                = "Example only; review against your security baseline."
+      }
+    ]
+  }
+  workload_application = {
+    name        = "nsg-application-dev"
+    network_key = "workload"
+    subnet_key  = "application"
+    rules       = []
+  }
+}

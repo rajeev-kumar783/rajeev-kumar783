@@ -1,0 +1,56 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: Validate
+    displayName: Validate Terraform
+    jobs:
+      - job: terraform
+        steps:
+          - script: |
+              mkdir -p "$HOME/.local/bin"
+              curl -fsSLo /tmp/terraform.zip https://releases.hashicorp.com/terraform/1.9.8/terraform_1.9.8_linux_amd64.zip
+              unzip -o /tmp/terraform.zip -d "$HOME/.local/bin"
+              echo "##vso[task.prependpath]$HOME/.local/bin"
+            displayName: Install Terraform 1.9.8
+          - script: terraform fmt -check -recursive
+            displayName: Check Terraform formatting
+          - script: terraform init -backend=false -input=false
+            displayName: Initialize without configuring a backend
+          - script: terraform validate
+            displayName: Validate Terraform
+
+  - stage: Security
+    displayName: IaC security scans
+    dependsOn: Validate
+    jobs:
+      - job: scanners
+        steps:
+          - script: |
+              python3 -m pip install --user checkov==3.2.392
+              echo "##vso[task.prependpath]$HOME/.local/bin"
+            displayName: Install pinned Checkov
+          - script: checkov -d . --quiet
+            displayName: Checkov scan
+          - script: |
+              docker run --rm \
+                -v "$(System.DefaultWorkingDirectory):/workspace" \
+                aquasec/trivy:0.58.2 config --exit-code 1 --severity HIGH,CRITICAL /workspace
+            displayName: Trivy configuration scan
+          - script: |
+              if command -v gitleaks >/dev/null 2>&1; then
+                gitleaks detect --no-git --redact
+              else
+                echo "Gitleaks is not installed on this agent; configure an approved pinned installation before making this gate required."
+              fi
+            displayName: Gitleaks scan when available

@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 <!-- ═══════════════════════ HEADER BANNER ═══════════════════════ -->
 <img
@@ -22,10 +22,10 @@
 <br/>
 
 <!-- ═══════════════════════ SOCIAL BADGES ═══════════════════════ -->
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/rajeev-kumar783)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajeev-kumar-devops/)
 [![GitHub](https://img.shields.io/badge/GitHub-Repositories-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rajeev-kumar783?tab=repositories)
-[![Blog](https://img.shields.io/badge/Tech%20Blog-Hashnode-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)]https://github.com/rajeev-kumar783
-[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajeev@example.com)
+[![YouTube](https://img.shields.io/badge/YouTube-Channel-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@RajeevKumar-4you)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajeevkumar.consulting@yahoo.com)
 
 <br/>
 
@@ -57,28 +57,30 @@ My professional focus: making cloud infrastructure **secure by design, auditable
 ## 🧭 Portfolio Architecture
 
 ```mermaid
-flowchart TB
-    A["🏗️ Engineering Portfolio<br/>rajeev-kumar783"] --> B["☁️ Azure Platform<br/>Engineering"]
-    A --> C["🔧 Infrastructure<br/>as Code"]
-    A --> D["🔐 DevSecOps<br/>Pipelines"]
-    A --> E["📦 Containers &<br/>App Delivery"]
-    A --> F["📊 SRE &<br/>Observability"]
-    A --> G["💰 FinOps &<br/>Governance"]
+graph TD
+    A["Engineering Portfolio"] --> B["Azure Platform<br/>Engineering"]
+    A --> C["Infrastructure as<br/>Code"]
+    A --> D["Secure CI/CD"]
+    A --> E["Containers"]
+    A --> F["SRE &<br/>Observability"]
 
-    B --> H["Hub-Spoke · CAF · Landing Zones · Entra ID"]
-    C --> I["Terraform Modules · Drift Detection · Remote State"]
-    D --> J["tfsec · Checkov · Trivy · GitLeaks · Infracost"]
-    E --> K["Docker · Kubernetes · AKS · Image Scanning"]
-    F --> L["Azure Monitor · Log Analytics · AMA · DCR · PagerDuty"]
-    G --> M["Azure Policy · RI · Rightsizing · Cost Alerts · RACI"]
+    B --> G["Networking ·<br/>Identity ·<br/>Governance"]
+    C --> H["Terraform ·<br/>Modules ·<br/>Validation"]
+    D --> I["Quality Gates ·<br/>IaC Scanning"]
+    E --> J["Build · Scan ·<br/>Deploy"]
+    F --> K["Metrics ·<br/>Dashboards ·<br/>Alerts · Runbooks"]
 
-    style A fill:#0A2342,stroke:#00C8FF,color:#ffffff
-    style B fill:#072136,stroke:#0066CC,color:#a0cfff
-    style C fill:#072136,stroke:#0066CC,color:#a0cfff
-    style D fill:#072136,stroke:#0066CC,color:#a0cfff
-    style E fill:#072136,stroke:#0066CC,color:#a0cfff
-    style F fill:#072136,stroke:#0066CC,color:#a0cfff
-    style G fill:#072136,stroke:#0066CC,color:#a0cfff
+    style A fill:#E8E0FF,stroke:#9B8FD4,color:#1a1a2e
+    style B fill:#E8E0FF,stroke:#9B8FD4,color:#1a1a2e
+    style C fill:#E8E0FF,stroke:#9B8FD4,color:#1a1a2e
+    style D fill:#E8E0FF,stroke:#9B8FD4,color:#1a1a2e
+    style E fill:#E8E0FF,stroke:#9B8FD4,color:#1a1a2e
+    style F fill:#E8E0FF,stroke:#9B8FD4,color:#1a1a2e
+    style G fill:#F0EAFF,stroke:#9B8FD4,color:#1a1a2e
+    style H fill:#F0EAFF,stroke:#9B8FD4,color:#1a1a2e
+    style I fill:#F0EAFF,stroke:#9B8FD4,color:#1a1a2e
+    style J fill:#F0EAFF,stroke:#9B8FD4,color:#1a1a2e
+    style K fill:#F0EAFF,stroke:#9B8FD4,color:#1a1a2e
 ```
 
 ---
@@ -386,8 +388,8 @@ Open to collaboration and opportunities in Azure DevSecOps, Cloud Architecture, 
 
 [![LinkedIn](https://img.shields.io/badge/Connect_on-LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rajeev-kumar-devops/)
 [![GitHub](https://img.shields.io/badge/Explore-Repositories-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/rajeev-kumar783?tab=repositories)
-[![Blog](https://img.shields.io/badge/Read-Tech%20Blog-2962FF?style=for-the-badge&logo=hashnode&logoColor=white)] (https://www.youtube.com/@RajeevKumar-4you)
-[![Email](https://img.shields.io/badge/Send-Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](rajeevkumar.consulting@yahoo.com)
+[![YouTube](https://img.shields.io/badge/Watch-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@RajeevKumar-4you)
+[![Email](https://img.shields.io/badge/Send-Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:rajeevkumar.consulting@yahoo.com)
 
 <br/>
 

@@ -1,0 +1,6 @@
+resource_id,cpu_percent,memory_percent
+/subscriptions/example/resourceGroups/demo/providers/Microsoft.Compute/virtualMachines/app-01,12,24
+/subscriptions/example/resourceGroups/demo/providers/Microsoft.Compute/virtualMachines/app-01,18,28
+/subscriptions/example/resourceGroups/demo/providers/Microsoft.Compute/virtualMachines/app-01,15,26
+/subscriptions/example/resourceGroups/demo/providers/Microsoft.Compute/virtualMachines/app-02,52,48
+/subscriptions/example/resourceGroups/demo/providers/Microsoft.Compute/virtualMachines/app-02,67,61
